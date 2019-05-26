@@ -2,11 +2,25 @@
 //
 
 #include <iostream>
+#include <fstream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World2!\n";
+    cout << "Hello World2!\n";
+	
+	ifstream inFile;
+	char ch1;
+	inFile.open("input.txt");
+	if (inFile.fail()) {
+		cerr << "unable to open file input.dat for reading" << endl;
+		exit(1);
+	}
+	inFile.get(ch1);
+	cout << ch1;
 }
+
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
